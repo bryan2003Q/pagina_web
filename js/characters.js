@@ -5,6 +5,7 @@ let characterList = [];
 const cardsContainer = document.getElementById('cards-container');
 const searchBtn = document.getElementById('searchBtn');
 const searchInput = document.getElementById('searchInput');
+const btnBackToLogin = document.getElementById('btnBackToLogin');
 
 
 // Function 1: Fetch data from the API
@@ -16,7 +17,6 @@ async function loadCharacters(url) {
         // Store the "results" array in memory
         characterList = data.results;
 
-        
         renderCharacters();
     } catch (error) {
         console.error("Error al cargar los personajes:", error);
@@ -74,6 +74,13 @@ searchBtn.addEventListener('click', () => {
     loadCharacters(searchUrl);
 
 });
+
+// Configuration for back button
+if (btnBackToLogin) {
+    btnBackToLogin.addEventListener('click', () => {
+        window.location.href = '../index.html';
+    });
+}
 
 //Inicio: Carga inicial al abrir la pagina
 loadCharacters('https://rickandmortyapi.com/api/character/');
