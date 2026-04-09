@@ -56,7 +56,7 @@ function mostrarEnPantalla() {
         card.addEventListener('click', () => {
 
             localStorage.setItem('personajeSeleccionado', JSON.stringify(personaje));
-            window.location.href = 'detalle.html';
+            window.location.href = 'details.html';
 
         });
 
