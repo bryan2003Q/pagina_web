@@ -7,8 +7,16 @@ body {
 
 /* Centers the main content column */
 .main-container {
+    width: 90%;
     max-width: 400px; 
     margin: 40px auto; 
+}
+
+/* Ensure images don't overflow on small screens */
+#character-detail img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
 #character-detail {
