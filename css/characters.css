@@ -1,37 +1,46 @@
+/* Container for character cards using CSS Grid */
+#cards-container {
+    display: grid;
+    /* 5 equal-sized columns by default */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
 
-    
-    /* Container for character cards using CSS Grid */
-    #cards-container{
-        display:grid;
-        /* 5 equal-sized columns by default */
-        grid-template-columns: repeat(5,1fr);
-        gap:20px;
-        margin-top: 30px;
-    }
-
-    /*When the window is 1000px or less, change to 3 columns
+/*When the window is 1000px or less, change to 3 columns
     */
-    @media (max-width:1000px){
-        #cards-container{
-            grid-template-columns: repeat(3,1fr);
+@media (max-width:1000px) {
+    #cards-container {
+        grid-template-columns: repeat(3, 1fr);
 
-        }
     }
+}
 
-    /* Individual card styling */
-    .card {
-        background-color: white;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        overflow: hidden; 
-        cursor: pointer;
-        transition: transform 0.2s; 
-        text-align: center;
-        padding-bottom: 10px;
-    }
+/* Individual card styling */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-align: center;
+    padding-bottom: 10px;
+}
 
 body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f9;
-        padding: 20px;
-    }
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    padding: 20px;
+}
+
+
+#btnBackToLogin {
+    padding: 10px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
