@@ -1,4 +1,4 @@
-// Lógica de JavaScript para el login
+
 const btnLogin = document.getElementById('btnLogin');
 const inputUser = document.getElementById('username');
 const inputPassword = document.getElementById('password');
