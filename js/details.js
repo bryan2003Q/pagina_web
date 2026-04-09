@@ -22,7 +22,6 @@ function cargarDetalle() {
     }
     try {
 
-   
 
         //mostrar informacion en el html
 

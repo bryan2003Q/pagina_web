@@ -13,11 +13,10 @@ async function cargarPersonajes(url) {
         const response = await fetch(url);
         const data = await response.json();
 
-        // Guardamos la parte de "results" en nuestro arreglo en memoria
-        // "results" es el [] que viste en la documentación
+        
         listaPersonajes = data.results;
 
-        //una vez guardados, llamamos a la función para mostrarlos
+        
         mostrarEnPantalla();
     } catch (error) {
         console.error("Error al cargar los personajes:", error);
