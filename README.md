@@ -6,7 +6,7 @@
 This is a web development practice consisting of a three-page application that interacts with the public Rick and Morty API (`https://rickandmortyapi.com/`). The project allows users to log in, view a list of characters from the show, search for specific characters by name, and view the full details of any selected character.
 
 ### File Structure
-The project is built using vanilla HTML, CSS, and JavaScript, and is organized as follows:
+The project is built using  HTML, CSS, and JavaScript, and is organized as follows:
 
 - `/index.html`: The main page containing the login form.
 - `/pages/`: Directory containing the main HTML pages of the application after login.
