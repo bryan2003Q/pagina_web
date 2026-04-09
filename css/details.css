@@ -5,24 +5,24 @@ body {
     background-color: #f0f2f5;
 }
 
-/* Este es el que hace el trabajo de centrar la "columna" de contenido */
-.contenedor-principal {
-    max-width: 400px; /* Mismo ancho que tu tarjeta */
-    margin: 40px auto; /* Centra horizontalmente el bloque completo */
+/* Centers the main content column */
+.main-container {
+    max-width: 400px; 
+    margin: 40px auto; 
 }
 
-#detalle-personaje {
+#character-detail {
     background-color: white;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     text-align: center;
-    box-sizing: border-box; /* Importante para que el padding no agrande la caja */
+    box-sizing: border-box; 
 }
 
-/* Estilo para alinear el botón a la izquierda */
-.contenedor-boton {
-    text-align: left; /* Alinea el botón a la izquierda dentro de los 400px */
+/* Styling to align the button to the left */
+.button-container {
+    text-align: left; 
     margin-bottom: 15px;
 }
 

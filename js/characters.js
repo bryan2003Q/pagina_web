@@ -1,23 +1,23 @@
 
 
-let listaPersonajes = [];
+let characterList = [];
 
-const contenedor = document.getElementById('contenedor-cards');
-const btnBuscar = document.getElementById('btnBuscar');
-const inputBusqueda = document.getElementById('inputBusqueda');
+const cardsContainer = document.getElementById('cards-container');
+const searchBtn = document.getElementById('searchBtn');
+const searchInput = document.getElementById('searchInput');
 
 
-// Funcion 1: obtener los datos
-async function cargarPersonajes(url) {
+// Function 1: Fetch data from the API
+async function loadCharacters(url) {
     try {
         const response = await fetch(url);
         const data = await response.json();
 
-        
-        listaPersonajes = data.results;
+        // Store the "results" array in memory
+        characterList = data.results;
 
         
-        mostrarEnPantalla();
+        renderCharacters();
     } catch (error) {
         console.error("Error al cargar los personajes:", error);
 
@@ -26,56 +26,54 @@ async function cargarPersonajes(url) {
 }
 
 
-//Funcion 2: dibujar las cards usando el arreglo en memoria
-function mostrarEnPantalla() {
-    //Limpiamos lo que haya en el html
-    contenedor.innerHTML = "";
+//Function 2: Draw cards using the character list in memory
+function renderCharacters() {
+    //Clear current HTML content
+    cardsContainer.innerHTML = "";
 
-    // recorremos el arreglo listaPersonajes
+    //Iterate through the characterList array
 
-    listaPersonajes.forEach(personaje => {
-        //creamos el elemento visual card
+    characterList.forEach(character => {
+        //Create the card visual element
         const card = document.createElement('div');
-
-        // Le asignamos la clase para el CSS
         card.classList.add('card');
 
-        //usamos los datos exactos en el Json: ,image y .name
+        //Map JSON data: image, name, species, and status
         card.innerHTML = `
        
-                <img src="${personaje.image}" alt="${personaje.name}" style="width:100%;">
-                    <h3>${personaje.name}</h3>
-                    <p>Especie: ${personaje.species}</p>
-                    <p>Estado: ${personaje.status}</p>
+                <img src="${character.image}" alt="${character.name}" style="width:100%;">
+                    <h3>${character.name}</h3>
+                    <p>Especie: ${character.species}</p>
+                    <p>Estado: ${character.status}</p>
                
           
         `;
 
-        // Al hacer clic , pasamos el ID a la otra pagina
+        // Click event: Save selection to localStorage and redirect
         card.addEventListener('click', () => {
 
-            localStorage.setItem('personajeSeleccionado', JSON.stringify(personaje));
+            localStorage.setItem('selectedCharacter', JSON.stringify(character));
             window.location.href = 'details.html';
 
         });
 
-        contenedor.appendChild(card);
+        cardsContainer.appendChild(card);
     });
 }
 
 
-// Función 3: Lógica del buscador
-btnBuscar.addEventListener('click', () => {
-    const busqueda = inputBusqueda.value.toLowerCase();
+// Function 3: Search logic
+searchBtn.addEventListener('click', () => {
+    const query = searchInput.value.toLowerCase();
 
-    //La Api permite buscar por nombre directamente en la URL
+    //API allows filtering by name using query parameters
 
-    const urlBusqueda = `https://rickandmortyapi.com/api/character/?name=${busqueda}`;
+    const searchUrl = `https://rickandmortyapi.com/api/character/?name=${query}`;
 
     //llamamos a la funcion de carga con la nueva url
-    cargarPersonajes(urlBusqueda);
+    loadCharacters(searchUrl);
 
 });
 
 //Inicio: Carga inicial al abrir la pagina
-cargarPersonajes('https://rickandmortyapi.com/api/character/');
+loadCharacters('https://rickandmortyapi.com/api/character/');
