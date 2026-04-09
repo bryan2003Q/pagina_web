@@ -17,7 +17,7 @@ btnLogin.addEventListener('click', function () {
     if (usuarioIngresado == usuarioCorrecto && passwordIngresado == passwordCorrecto) {
         //Si es correcto, redirigimos
         alert("Bienvenido");
-        window.location.href = 'characters.html';
+        window.location.href = 'pages/characters.html';
 
     } else {
         //Si es incorrecto, mostramos un error y no redirigimos
