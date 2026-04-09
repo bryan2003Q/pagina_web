@@ -1,6 +1,35 @@
+
+
+
+
+### Project Description
+This is a web development practice consisting of a three-page application that interacts with the public Rick and Morty API (`https://rickandmortyapi.com/`). The project allows users to log in, view a list of characters from the show, search for specific characters by name, and view the full details of any selected character.
+
+### File Structure
+The project is built using vanilla HTML, CSS, and JavaScript, and is organized as follows:
+
+- `/index.html`: The main page containing the login form.
+- `/pages/`: Directory containing the main HTML pages of the application after login.
+  - `characters.html`: Page displaying the list of characters.
+  - `details.html`: Page displaying the detailed view of a specific character.
+- `/css/`: Directory containing the cascading stylesheets (CSS) for each page.
+  - `login.css`: Styles for the login page.
+  - `characters.css`: Styles for the character list/grid view.
+  - `details.css`: Styles for the details view.
+- `/js/`: Directory containing the JavaScript application logic.
+  - `login.js`: Handles static user authentication.
+  - `characters.js`: Responsible for fetching data from the Rick and Morty API, rendering the character cards, and handling the search functionality.
+  - `details.js`: Retrieves the saved character information from memory and displays its details.
+
+### Features
+1. **Login:** Access through static credentials (Username: `admin`, Password: `1234`). Upon successful login, the user is redirected to the main characters page.
+2. **Character Listing and Search:** Displays character cards dynamically fetched from the API. It includes a search bar to filter characters by name.
+3. **Character Details:** By clicking on a character card, the information is stored in `localStorage` and the user is redirected to a detail page displaying species, status, origin, gender, and last known location.
+4. **Navigation:** A back button to return from the details view to the character list seamlessly.
+
 # Proyecto Web: Rick and Morty Character Explorer
 
-## 🇪🇸 Español
+
 
 ### Descripción del Proyecto
 Esta es una práctica de desarrollo web que consiste en una aplicación de tres pantallas interactuando con la API pública de Rick and Morty (`https://rickandmortyapi.com/`). El proyecto permite a los usuarios iniciar sesión, visualizar una lista de personajes de la serie, buscar personajes específicos por su nombre y ver los detalles completos de cada personaje seleccionado.
@@ -30,30 +59,3 @@ El proyecto está construido usando HTML, CSS y JavaScript vainilla, y está org
 
 ---
 
-
-## 🇺🇸 English
-
-### Project Description
-This is a web development practice consisting of a three-page application that interacts with the public Rick and Morty API (`https://rickandmortyapi.com/`). The project allows users to log in, view a list of characters from the show, search for specific characters by name, and view the full details of any selected character.
-
-### File Structure
-The project is built using vanilla HTML, CSS, and JavaScript, and is organized as follows:
-
-- `/index.html`: The main page containing the login form.
-- `/pages/`: Directory containing the main HTML pages of the application after login.
-  - `characters.html`: Page displaying the list of characters.
-  - `details.html`: Page displaying the detailed view of a specific character.
-- `/css/`: Directory containing the cascading stylesheets (CSS) for each page.
-  - `login.css`: Styles for the login page.
-  - `characters.css`: Styles for the character list/grid view.
-  - `details.css`: Styles for the details view.
-- `/js/`: Directory containing the JavaScript application logic.
-  - `login.js`: Handles static user authentication.
-  - `characters.js`: Responsible for fetching data from the Rick and Morty API, rendering the character cards, and handling the search functionality.
-  - `details.js`: Retrieves the saved character information from memory and displays its details.
-
-### Features
-1. **Login:** Access through static credentials (Username: `admin`, Password: `1234`). Upon successful login, the user is redirected to the main characters page.
-2. **Character Listing and Search:** Displays character cards dynamically fetched from the API. It includes a search bar to filter characters by name.
-3. **Character Details:** By clicking on a character card, the information is stored in `localStorage` and the user is redirected to a detail page displaying species, status, origin, gender, and last known location.
-4. **Navigation:** A back button to return from the details view to the character list seamlessly.
