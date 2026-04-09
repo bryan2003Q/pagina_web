@@ -1,49 +1,51 @@
-const contenedorDetalle = document.getElementById('detalle-personaje');
+const detailContainer = document.getElementById('character-detail');
 const btnBack = document.getElementById('btnBack');
 
 
 
-//configurar el botón de regreso
+//Configure the back button behavior
 btnBack.addEventListener('click', () => {
-    localStorage.removeItem('personajeSeleccionado');
+    localStorage.removeItem('selectedCharacter');
     window.history.back();
 });
 
 
-function cargarDetalle() {
+//Load and render the selected character details
 
-    const datosGuardados = localStorage.getItem('personajeSeleccionado');
-    const personaje = JSON.parse(datosGuardados);
+function loadDetail() {
 
-    if (!personaje) {
-        contenedorDetalle.innerHTML = "<p>Error: no se encontro el personaje.</p>";
+    const savedData = localStorage.getItem('selectedCharacter');
+    const character = JSON.parse(savedData);
+
+    if (!character) {
+        detailContainer.innerHTML = "<p>Error: no se encontro el personaje.</p>";
         return;
 
     }
     try {
 
 
-        //mostrar informacion en el html
+        // Render information into the HTML
 
-        contenedorDetalle.innerHTML = `
-        <h1>${personaje.name}</h1>
-        <img src="${personaje.image}" style="width:300px;">
+        detailContainer.innerHTML = `
+        <h1>${character.name}</h1>
+        <img src="${character.image}" style="width:300px;">
 
         <div class="info">
-        <p><strong>Estado:</strong> ${personaje.status}</p>
-        <p><strong>Especie:</strong> ${personaje.species}</p>
-        <p><strong>Genero:</strong> ${personaje.gender}</p>
-        <p><strong>Origen:</strong> ${personaje.origin.name}</p>
-        <p><strong>Ubicación:</strong> ${personaje.location.name}</p>
+        <p><strong>Estado:</strong> ${character.status}</p>
+        <p><strong>Especie:</strong> ${character.species}</p>
+        <p><strong>Genero:</strong> ${character.gender}</p>
+        <p><strong>Origen:</strong> ${character.origin.name}</p>
+        <p><strong>Ubicación:</strong> ${character.location.name}</p>
         
         </div>
         `;
 
     } catch (error) {
         console.error("Error al cargar el detalle del personaje:", error);
-        contenedorDetalle.innerHTML = "<p> Hubo un error al conectar con la API.</p>";
+        detailContainer.innerHTML = "<p> Hubo un error al conectar con la API.</p>";
     }
 
 }
-//Ejecutar la función al cargar la página
-cargarDetalle();
+// Execute the function when the page loads
+loadDetail();
